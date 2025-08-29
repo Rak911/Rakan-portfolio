@@ -1,0 +1,57 @@
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ملخص محفظة راكان</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>ملخص محفظة راكان</h1>
+    <div class="actions">
+      <button id="refreshBtn">تحديث الآن</button>
+      <button id="saveBtn">حفظ</button>
+      <button id="exportBtn">تصدير كنص</button>
+    </div>
+  </header>
+
+  <section class="controls">
+    <label>سعر صرف الدولار (USD/SAR): <input type="number" id="usdSar" step="0.0001" value="3.75"></label>
+    <label>سعر وحدة السنبلة (اختياري): <input type="number" id="sunbullahNav" step="0.0001" placeholder="مثال: 139.9"></label>
+  </section>
+
+  <section class="hint">
+    <p>الأسماء بالعربي، و<strong>الصندوق الأمريكي الإسلامي</strong> يعرض السعر/التكلفة كوحدة <em>بدون</em> كلمة "ريال". الزكاة تُحسب يوميًا <strong>فقط</strong> على السنبلة والصندوق الأمريكي الإسلامي (2.5%).</p>
+  </section>
+
+  <section>
+    <table id="tbl">
+      <thead>
+        <tr>
+          <th>الأصل</th>
+          <th>الكمية</th>
+          <th>متوسط التكلفة</th>
+          <th>السعر الحالي</th>
+          <th>القيمة السوقية</th>
+          <th>الربح/الخسارة</th>
+          <th>الزكاة (2.5%)</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="7" id="totalsCell"></td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+
+  <footer>
+    <small>يتحدث تلقائيًا كل 60 ثانية • جاهز للنشر على Render/Railway • يحفظ إعداداتك بالجهاز</small>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
